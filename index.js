@@ -1,116 +1,128 @@
-let csvmenu = {};
-const req = new XMLHttpRequest();
-req.open("GET",'testMenu.csv',true);
-req.send();
-req.onload = function(){
-  csvmenu = CSVToArray(req.response)
-for (const rocket of csvmenu) {
-    console.log(rocket[0].split(' ').join(''))
-    const newDiv = document.createElement("div");
+//Example fetch using .
+document.addEventListener('DOMContentLoaded', () => {
+    let loaded = false;
+    let menuCSV = [];
+    const req = new XMLHttpRequest();
+    req.open("GET", 'testMenu.csv', true);
+    req.send();
+    req.onload = function () {
+        menuCSV = CSVToArray(req.response)
+        for (const rocket of menuCSV) {
+            const newDiv = document.createElement("div");
+            // and give it some content
+            const newContent = document.createTextNode(`${rocket[0]} ${rocket[1]}`);
+            newDiv.setAttribute("id", `${rocket[0].split(' ').join('')}`);
+            newDiv.setAttribute("class", "text-center h5 col-lg-4")
+            // add the text node to the newly created div
+            newDiv.appendChild(newContent);
+            if (rocket[1] === "") {
+                newDiv.setAttribute("class", "text-center h3 col-lg-12")
+            }
+            // add the newly created element and its content into the DOM
+            const currentDiv = document.getElementById("menu");
+            menu.appendChild(newDiv)
+            if(loaded!=true){
+                logMenu(menuCSV)
+                loaded = true;
+            }
+            // document.body.insertBefore(newDiv, currentDiv);
+        }
+    };
 
-    // and give it some content
-    const newContent = document.createTextNode(`${rocket[0]} ${rocket[1]}`);
-    newDiv.setAttribute("id",`${rocket[0].split(' ').join('')}`);
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
-    // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("menu");
-    menu.appendChild(newDiv)
-    // document.body.insertBefore(newDiv, currentDiv);
-}
-};
+    function logMenu(menuCSV){
+        menuCSV = menuCSV;
+        console.log(menuCSV)
+        fillMenu(menuCSV)
+    }
+    var mod = []
+    function fillMenu(menuCSV) {
+        for(let i = 0 ; i < menuCSV.length; i++){
+            console.log(menuCSV[i])
+        }
+        for (const rocket of menuCSV) {
+            let mod = new MenuItem(`${rocket[0]}`,`${rocket[1]}`)
 
-function CSVToArray( strData, strDelimiter ){
-    // Check to see if the delimiter is defined. If not,
-    // then default to comma.
-    strDelimiter = (strDelimiter || ",");
+        }
+    }
+    class MenuItem {
+        constructor(itemName, price) {
+            this.itemName = itemName;
+            this.price = price;
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode(`${this.itemName} ${price}`);
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", "text-center h5 col-lg-4");
+            newDiv.appendChild(newContent);
+            menu.appendChild(newDiv)
+        }
+    }
     
-    // Create a regular expression to parse the CSV values.
-    var objPattern = new RegExp(
-        (
-            // Delimiters.
-            "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
-            // Quoted fields.
-            "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
-            // Standard fields.
-            "([^\"\\" + strDelimiter + "\\r\\n]*))"
+    let menuList = [];
+    let menuCategories = [];
+    let menuItemsList = [];
+    function CSVToArray(strData, strDelimiter) {
+        // Check to see if the delimiter is defined. If not,
+        // then default to comma.
+        strDelimiter = (strDelimiter || ",");
+    
+        // Create a regular expression to parse the CSV values.
+        var objPattern = new RegExp(
+            (
+                // Delimiters.
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+                // Quoted fields.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+                // Standard fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"
             ),
             "gi"
-            );
-            // Create an array to hold our data. Give the array
-            // a default empty first row.
-            var arrData = [[]];
-            // Create an array to hold our individual pattern
-            // matching groups.
-            var arrMatches = null;
-            // Keep looping over the regular expression matches
-            // until we can no longer find a match.
-    while (arrMatches = objPattern.exec( strData )){
-        // Get the delimiter that was found.
-        var strMatchedDelimiter = arrMatches[ 1 ];
-        // Check to see if the given delimiter has a length
-        // (is not the start of string) and if it matches
-        // field delimiter. If id does not, then we know
-        // that this delimiter is a row delimiter.
-        if (
-            strMatchedDelimiter.length &&
-            strMatchedDelimiter !== strDelimiter
-            ){
+        );
+        // Create an array to hold our data. Give the array
+        // a default empty first row.
+        var arrData = [[]];
+        // Create an array to hold our individual pattern
+        // matching groups.
+        var arrMatches = null;
+        // Keep looping over the regular expression matches
+        // until we can no longer find a match.
+        while (arrMatches = objPattern.exec(strData)) {
+            // Get the delimiter that was found.
+            var strMatchedDelimiter = arrMatches[1];
+            // Check to see if the given delimiter has a length
+            // (is not the start of string) and if it matches
+            // field delimiter. If id does not, then we know
+            // that this delimiter is a row delimiter.
+            if (
+                strMatchedDelimiter.length &&
+                strMatchedDelimiter !== strDelimiter
+            ) {
                 // Since we have reached a new row of data,
                 // add an empty row to our data array.
-                arrData.push( [] );
+                arrData.push([]);
             }
             var strMatchedValue;
             // Now that we have our delimiter out of the way,
             // let's check to see which kind of value we
             // captured (quoted or unquoted).
-            if (arrMatches[ 2 ]){
+            if (arrMatches[2]) {
                 // We found a quoted value. When we capture
                 // this value, unescape any double quotes.
-                strMatchedValue = arrMatches[ 2 ].replace(
-                    new RegExp( "\"\"", "g" ),
+                strMatchedValue = arrMatches[2].replace(
+                    new RegExp("\"\"", "g"),
                     "\""
-                    );
-                } else {
-                    // We found a non-quoted value.
-                    strMatchedValue = arrMatches[ 3 ];
-                }
-                // Now that we have our value string, let's add
-                // it to the data array.
-                arrData[ arrData.length - 1 ].push( strMatchedValue );
+                );
+            } else {
+                // We found a non-quoted value.
+                strMatchedValue = arrMatches[3];
             }
-            // Return the parsed data.
-            console.log(arrData)
-            return( arrData );
+            // Now that we have our value string, let's add
+            // it to the data array.
+            arrData[arrData.length - 1].push(strMatchedValue);
         }
-
-
-
-
-// function csvToArray(str, delimiter = ",") {
-    //     // slice from start of text to the first \n index
-    //     // use split to create an array from string by delimiter
-    //     const headers = str.slice(0, str.indexOf("\n")).split(delimiter);
+        // Return the parsed data.
     
-    //     // slice from \n index + 1 to the end of the text
-    //     // use split to create an array of each csv value row
-    //     const rows = str.slice(str.indexOf("\n") + 1).split("\n");
-    
-    //     // Map the rows
-    //     // split values from each row into an array
-    //     // use headers.reduce to create an object
-    //     // object properties derived from headers:values
-    //     // the object passed as an element of the array
-//     const arr = rows.map(function (row) {
-//       const values = row.split(delimiter);
-//       const el = headers.reduce(function (object, header, index) {
-//         object[header] = values[index];
-//         return object;
-//       }, {});
-//       return el;
-//     });
-//     console.log(arr)
-//     // return the array
-//     return arr;
-//   }
-  
+        return (arrData);
+    }
+});

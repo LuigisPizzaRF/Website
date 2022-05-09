@@ -7,42 +7,43 @@ document.addEventListener('DOMContentLoaded', () => {
     req.send();
     req.onload = function () {
         menuCSV = CSVToArray(req.response)
-        for (const rocket of menuCSV) {
-            const newDiv = document.createElement("div");
-            // and give it some content
-            const newContent = document.createTextNode(`${rocket[0]} ${rocket[1]}`);
-            newDiv.setAttribute("id", `${rocket[0].split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center h5 col-lg-4")
-            // add the text node to the newly created div
-            newDiv.appendChild(newContent);
-            if (rocket[1] === "") {
-                newDiv.setAttribute("class", "text-center h3 col-lg-12")
-            }
-            // add the newly created element and its content into the DOM
-            const currentDiv = document.getElementById("menu");
-            menu.appendChild(newDiv)
-            if(loaded!=true){
-                logMenu(menuCSV)
-                loaded = true;
-            }
-            // document.body.insertBefore(newDiv, currentDiv);
-        }
+        logMenu(menuCSV)
+        // for (const rocket of menuCSV) {
+        //     const newDiv = document.createElement("div");
+        //     // and give it some content
+        //     const newContent = document.createTextNode(`${rocket[0]} ${rocket[1]}`);
+        //     newDiv.setAttribute("id", `${rocket[0].split(' ').join('')}`);
+        //     newDiv.setAttribute("class", "text-center h5 col-lg-4")
+        //     // add the text node to the newly created div
+        //     newDiv.appendChild(newContent);
+        //     if (rocket[1] === "") {
+        //         newDiv.setAttribute("class", "text-center h3 col-lg-12")
+        //     }
+        //     // add the newly created element and its content into the DOM
+        //     const currentDiv = document.getElementById("menu");
+        //     menu.appendChild(newDiv)
+        //     if(loaded!=true){
+        //         logMenu(menuCSV)
+        //         loaded = true;
+        //     }
+        //     // document.body.insertBefore(newDiv, currentDiv);
+        // }
     };
-
-    function logMenu(menuCSV){
-        menuCSV = menuCSV;
+    
+    const menuList = [];
+    const menuLookup = {};
+    function logMenu(passedList){
+        menuCSV = passedList;
         console.log(menuCSV)
-        fillMenu(menuCSV)
+        fillMenu(passedList)
     }
-    var mod = []
-    function fillMenu(menuCSV) {
-        for(let i = 0 ; i < menuCSV.length; i++){
-            console.log(menuCSV[i])
-        }
-        for (const rocket of menuCSV) {
-            let mod = new MenuItem(`${rocket[0]}`,`${rocket[1]}`)
-
-        }
+    function fillMenu(passMenu) {
+        menuCSV.forEach(e => {
+            console.log(e[0]);
+          menuList.push(new MenuItem(e[0], e[1]));
+          menuLookup[e[0].split(' ').join('')] = new MenuItem(e[0], e[1]);
+          menuLookup[e[0].split(' ').join('')].popListing()
+        });
     }
     class MenuItem {
         constructor(itemName, price) {
@@ -51,16 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         popListing() {
             const newDiv = document.createElement("div");
-            const newContent = document.createTextNode(`${this.itemName} ${price}`);
+            const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
             newDiv.setAttribute("class", "text-center h5 col-lg-4");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
     }
+    class Category {
+        constructor(itemName, price) {
+            this.itemName = itemName;
+            this.price = price;
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", "text-center h3 col-lg-12");
+            newDiv.appendChild(newContent);
+            menu.appendChild(newDiv)
+        }
+    }
     
-    let menuList = [];
-    let menuCategories = [];
     let menuItemsList = [];
     function CSVToArray(strData, strDelimiter) {
         // Check to see if the delimiter is defined. If not,

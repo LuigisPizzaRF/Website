@@ -33,31 +33,32 @@ Manicotti,$8.75,,,,Single item
 Chicken Alfredo,$10.25,,,,Single item
 Substitute Alfredo Sauce for an additional $2.00.,,,,,Addon
 Luigi's Pizza Sauces ,,,,,Food Category
-Homemade Spicy Original,,,,,Description
-Homemade Deep Dish Sauce,,,,,Description
-Mild Sauce,,,,,Description
+Homemade Spicy Original,,,,,Single item
+Homemade Deep Dish Sauce,,,,,Single item
+Mild Sauce,,,,,Single item
 Alfredo Sauce ,$3.00,,,,Addon
 Pizza,,,,,Food Category
-,10',"12""","14""",,CategoryPizza
-,Small,Medium,Large,,Pizza listing
-Basic Cheese,$9.50,$11.50,$13.50,,Pizza listing
-Think Crust,$1.50,$2.00,$2.50,,Pizza listing
-Caluliflower Crust,$2.25,--,--,,Pizza listing
-Gluten Free Crust,--,$2.00,--,,Pizza listing
-Add a topping,$1.25,$1.50,$1.75,,Pizza listing
-Extra cheese,$1.25,$1.50,$1.75,,Pizza listing
+,10',"12""","14""",pizzaMenu,Category Pizza
+,Small,Medium,Large,pizzaMenu,Pizza listing
+Basic Cheese,$9.50,$11.50,$13.50,pizzaMenu,Pizza listing
+Think Crust,$1.50,$2.00,$2.50,pizzaMenu,Pizza listing
+Caluliflower Crust,$2.25,--,--,pizzaMenu,Pizza listing
+Gluten Free Crust,--,$2.00,--,pizzaMenu,Pizza listing
+Add a topping,$1.25,$1.50,$1.75,pizzaMenu,Pizza listing
+Extra cheese,$1.25,$1.50,$1.75,pizzaMenu,Pizza listing
 Pizza Toppings ,,,,,Category
 "Pepperoni, Canadian Bacon, Sausage, Hamburger, Sliced Bacon, Salami, Chicken, Shrimp, Onions, Black Olives, Green Olives, Mushrooms, Green Peppers, Pineapple, Broccoli, Diced Tomatoes, Cheddar Cheese.",,,,,toppings
 Deep Dish,,,,,Food Category
 A deep dish pizza filled with mozzeralla cheese and topped with Luigi's homemade deep dish pizza sauce. Add you choice of toppings for an additional charge.,,,,,Description
-,10',"12""","14""",,CategoryPizza
-,Small,Medium,Large,,Pizza listing
-Deep Dish,$15.00,$17.00,$19.00,,CategoryPizza
-Add a topping,$1.25,$1.50,$1.70,,Pizza listing
+,"10""","12""","14""",deepDishMenu,Category Deep Dish
+,Small,Medium,Large,deepDishMenu,Deep Dish listing
+Deep Dish,$15.00,$17.00,$19.00,deepDishMenu,Deep Dish listing
+Add a topping,$1.25,$1.50,$1.70,deepDishMenu,Deep Dish listing
 Please allow up to 45 minutes for the deep dish pizza's preparation; it's well worth the wait!,,,,,Description
 Prepared near food that contains gluten.,,,,,Addon
 Specialty Pizzas,,,,,Food Category
-,small,medium,large,,Special Pizzas
+,"10""","12""","14""",,Category Special Pizzas
+,small,medium,large,,Special Pizza Listing
 Luigi's Super Pie,--,$22.00,$24.00,"Onions, Green Peepers, Canadian Bacon, Black Olives, Green Olives, Pepperoni, Sausage, Mushrooms",Special Pizza Listing
 Luigi's Special,--,$19.00,$21.00,"Sausage, Mushrooms, Onions, Green Peppers, Pepperoni, Green Olives",Special Pizza Listing
 Veggie Pizza,--,$18.00,$20.00,"Onions, Mushrooms, Green Olives, Black Olives, Green Peppers",Special Pizza Listing
@@ -71,17 +72,17 @@ Add a Topping ,$1.00,,,,Addon
 Baked Italian Sausage,$10.00,"Toasted bread Covered with our home made luigis spagheti sauce, spicy Italian sausage, mozzarella chesse, and topped with spicy pepperchinis.",,,Single item
 Luigi's Hot Super Hoagies,,,,,Food Category
 "All hogies are served with cheese, tomatos, onions, lettuce, and mayo.",,,,,Description
-,Half,Whole,,,Hogies 
-Cheese,$4.50,$6.50,,,Hogie listing
-Veggie,$5.75,$7.75,,,Hogie listing
-Salami,$6.00,$8.00,,,Hogie listing
-Ham,$6.00,$8.00,,,Hogie listing
-Pepperoni,$6.00,$8.00,,,Hogie listing
-Turkey,$6.00,$8.00,,,Hogie listing
-Roast Beef,$6.25,$8.25,,,Hogie listing
-Assorted,$6.25,$8.25,,,Hogie listing
-Club,$6.25,$8.25,,,Hogie listing
-Meatball,$6.25,$8.25,,,Hogie listing
+,Half,Whole,,,Hogies
+Cheese,$4.50,$6.50,,Hogies,Hogie Listing
+Veggie,$5.75,$7.75,,Hogies,Hogie Listing
+Salami,$6.00,$8.00,,Hogies,Hogie Listing
+Ham,$6.00,$8.00,,Hogies,Hogie Listing
+Pepperoni,$6.00,$8.00,,Hogies,Hogie Listing
+Turkey,$6.00,$8.00,,Hogies,Hogie Listing
+Roast Beef,$6.25,$8.25,,Hogies,Hogie Listing
+Assorted,$6.25,$8.25,,Hogies,Hogie Listing
+Club,$6.25,$8.25,,Hogies,Hogie Listing
+Meatball,$6.25,$8.25,,Hogies,Hogie Listing
 "(Only meatballs, cheese, and sauce)",,,,,Addon
 Sandwiches,,,,,Food Category
 Chicken Sandwich with Fries,$8.00,,,,Single item

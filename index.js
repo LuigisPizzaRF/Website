@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let loaded = false;
     let menuCSV = [];
     const req = new XMLHttpRequest();
-    req.open("GET", 'testMenu.csv', true);
+    req.open("GET", 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOhUtgq_YsSO7egE450S1KSVAx44W1gSjG1HPs_6RPfW64Fzrx7IrJUrbByVPIGv0pggi-NIa8k_0h/pub?output=csv', true);
     req.send();
     req.onload = function () {
         menuCSV = CSVToArray(req.response)
@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
         }
         popListing() {
-            const newDiv = document.createElement("div");
+            const newDiv = document.createElement("h2");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center h2 col-lg-12 font-bold");
+            newDiv.setAttribute("class", " col-lg-12");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
-            newDiv.setAttribute("class", "text-center h2 row justify-content-center");
-            newTable.setAttribute("class", "col-xs-12 text-center h2 align-center");
+            newDiv.setAttribute("class", "text-center  ");
+            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newSmallRow.setAttribute("class", "text-center");
             newMedRow.setAttribute("class", "text-center");
             newLgRow.setAttribute("class", "text-center");
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             const newMainDes = document.createTextNode(`${this.itemName}`);
             newRow.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDesRow.setAttribute("class", "small");
+            newDesRow.setAttribute("class", "table-item");
             newSmallRow.appendChild(newSmDes);
             newMedRow.appendChild(newMdDes);
             newLgRow.appendChild(newLgDes);
@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center h2 col-lg-12 align-center");
+            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
-            newDiv.setAttribute("class", "text-center h2 col-lg-12 ");
+            newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newTable.setAttribute("id", `deepDishMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -240,11 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             const newMainDes = document.createTextNode(`${this.itemName}`);
             newRow.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDesRow.setAttribute("class", "table-item");
             newSmallRow.appendChild(newSmDes);
             newMedRow.appendChild(newMdDes);
             newLgRow.appendChild(newLgDes);
             newDesRow.appendChild(newMainDes);
-
+            
             newRow.appendChild(newDesRow);
             newRow.appendChild(newSmallRow);
             newRow.appendChild(newMedRow);
@@ -255,8 +256,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     class SpecialPizzaTable extends MenuItem{
-        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo, tableLink) {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
+            this.link = tableLink;
         }
         popListing() {
             const newDiv = document.createElement('div');
@@ -270,9 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center h2 col-lg-12 align-center");
+            newTable.setAttribute("class", "text-center center  col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
-            newDiv.setAttribute("class", "text-center h2 col-lg-12 ");
+            newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newTable.setAttribute("id", `specialPizzaMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -295,31 +297,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     class SpecialPizzaItem extends  MenuItem {
-        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo, tableLink) {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
+            this.link = tableLink;
         }
         popListing() {
+            const newDesRow = document.createElement('td');
             const newSmallRow = document.createElement("td");
             const newMedRow = document.createElement('td');
             const newLgRow = document.createElement('td');
-            const newDesRow = document.createElement('td');
+            const toppingsList = document.createElement('td')
             const newRow = document.createElement('tr');
+            const newMainDes = document.createTextNode(`${this.itemName}`);
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            const newMainDes = document.createTextNode(`${this.itemName}`);
+            const toppingsfill = document.createTextNode(`${this.extraInfo}`)
             newRow.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDesRow.setAttribute("class", "table-item");
+            newDesRow.appendChild(newMainDes);
             newSmallRow.appendChild(newSmDes);
             newMedRow.appendChild(newMdDes);
             newLgRow.appendChild(newLgDes);
-            newDesRow.appendChild(newMainDes);
+            toppingsList.appendChild(toppingsfill)
 
             newRow.appendChild(newDesRow);
             newRow.appendChild(newSmallRow);
             newRow.appendChild(newMedRow);
             newRow.appendChild(newLgRow);
-
-            specialPizzaMenu.appendChild(newRow);
+            newRow.appendChild(toppingsList)
+            let rocket = document.getElementById('specialPizzaMenu')
+            rocket.appendChild(newRow);
 
         }
     }
@@ -333,29 +341,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const newDesRow = document.createElement("th");
             const newSmallRow = document.createElement("th");
             const newMedRow = document.createElement('th');
-            const newLgRow = document.createElement('th');
             const newRow = document.createElement('tr');
             const newMainDes = document.createTextNode(`${this.itemName}`);
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
-            const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center h2 col align-center");
+            newTable.setAttribute("class", "text-center  col align-center center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
-            newDiv.setAttribute("class", "text-center h2 col-lg-12 ");
+            newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newTable.setAttribute("id", `sandMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
             newMedRow.setAttribute("id", `medPizza`);
-            newLgRow.setAttribute("id", `lgPizza`);
+
             newDesRow.appendChild(newMainDes);
             newSmallRow.appendChild(newSmDes);
             newMedRow.appendChild(newMdDes);
-            newLgRow.appendChild(newLgDes);
+
 
             newRow.appendChild(newDesRow);
             newRow.appendChild(newSmallRow);
             newRow.appendChild(newMedRow);
-            newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
             newDiv.appendChild(newTable);
@@ -378,6 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             const newMainDes = document.createTextNode(`${this.itemName}`);
             newRow.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDesRow.setAttribute("class", "table-item");
             newSmallRow.appendChild(newSmDes);
             newMedRow.appendChild(newMdDes);
             newLgRow.appendChild(newLgDes);
@@ -394,67 +400,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let menuItemsList = [];
-    function CSVToArray(strData, strDelimiter) {
-        // Check to see if the delimiter is defined. If not,
-        // then default to comma.
-        strDelimiter = (strDelimiter || ",");
 
-        // Create a regular expression to parse the CSV values.
-        var objPattern = new RegExp(
-            (
-                // Delimiters.
-                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
-                // Quoted fields.
-                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
-                // Standard fields.
-                "([^\"\\" + strDelimiter + "\\r\\n]*))"
-            ),
-            "gi"
-        );
-        // Create an array to hold our data. Give the array
-        // a default empty first row.
-        var arrData = [[]];
-        // Create an array to hold our individual pattern
-        // matching groups.
-        var arrMatches = null;
-        // Keep looping over the regular expression matches
-        // until we can no longer find a match.
-        while (arrMatches = objPattern.exec(strData)) {
-            // Get the delimiter that was found.
-            var strMatchedDelimiter = arrMatches[1];
-            // Check to see if the given delimiter has a length
-            // (is not the start of string) and if it matches
-            // field delimiter. If id does not, then we know
-            // that this delimiter is a row delimiter.
-            if (
-                strMatchedDelimiter.length &&
-                strMatchedDelimiter !== strDelimiter
-            ) {
-                // Since we have reached a new row of data,
-                // add an empty row to our data array.
-                arrData.push([]);
-            }
-            var strMatchedValue;
-            // Now that we have our delimiter out of the way,
-            // let's check to see which kind of value we
-            // captured (quoted or unquoted).
-            if (arrMatches[2]) {
-                // We found a quoted value. When we capture
-                // this value, unescape any double quotes.
-                strMatchedValue = arrMatches[2].replace(
-                    new RegExp("\"\"", "g"),
-                    "\""
-                );
-            } else {
-                // We found a non-quoted value.
-                strMatchedValue = arrMatches[3];
-            }
-            // Now that we have our value string, let's add
-            // it to the data array.
-            arrData[arrData.length - 1].push(strMatchedValue);
-        }
-        // Return the parsed data.
-
-        return (arrData);
-    }
 });

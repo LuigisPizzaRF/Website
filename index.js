@@ -1,5 +1,6 @@
 //Example fetch using .
 document.addEventListener('DOMContentLoaded', () => {
+    
     let loaded = false;
     let menuCSV = [];
     const req = new XMLHttpRequest();
@@ -64,6 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuList.push(new SandwichItem(e[0], e[1], e[2], e[3], e[4]));
                 menuLookup[e[0].split(' ').join(' ')] = new SandwichItem(e[0], e[1], e[2], e[3], e[4]);
                 menuLookup[e[0].split(' ').join(' ')].popListing();
+            } else if (e[5] === 'Addon') {
+                menuList.push(new Addon(e[0], e[1], e[2], e[3], e[4]));
+                menuLookup[e[0].split(' ').join(' ')] = new Addon(e[0], e[1], e[2], e[3], e[4]);
+                menuLookup[e[0].split(' ').join(' ')].popListing();
+            } else if (e[5] === 'Note') {
+                menuList.push(new Note(e[0], e[1], e[2], e[3], e[4]));
+                menuLookup[e[0].split(' ').join(' ')] = new Note(e[0], e[1], e[2], e[3], e[4]);
+                menuLookup[e[0].split(' ').join(' ')].popListing();
+            } else if (e[5] === 'Toppings') {
+                menuList.push(new Toppings(e[0], e[1], e[2], e[3], e[4]));
+                menuLookup[e[0].split(' ').join(' ')] = new Toppings(e[0], e[1], e[2], e[3], e[4]);
+                menuLookup[e[0].split(' ').join(' ')].popListing();
             }
         });
     }
@@ -77,9 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         popListing() {
             const newDiv = document.createElement("div");
+            const newP = document.createElement('p');
             const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center h4 col-lg-4");
+            newDiv.setAttribute("class", "text-center food-item col-md-4");
+            newDiv.appendChild(newContent);
+            if(this.mediumPrice != ""){
+                const newEm = document.createElement('em');
+                const newBr = document.createElement('br');
+                const newEmContent = document.createTextNode(`${this.mediumPrice}`);
+                newEm.setAttribute("class", "addon")
+                newEm.appendChild(newEmContent);
+                newDiv.appendChild(newBr);
+                newDiv.appendChild(newEm);
+            }
+            menu.appendChild(newDiv)
+        }
+    }
+    class Toppings extends MenuItem {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+            super(itemName, price, mediumPrice, largePrice, extraInfo)
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const newContent = document.createTextNode(`${this.itemName}`);
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", " food-item col-12");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
@@ -89,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
         }
         popListing() {
-            const newDiv = document.createElement("h2");
+            const newDiv = document.createElement("div");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", " col-lg-12");
+            newDiv.setAttribute("class", " food-cat col-12");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
@@ -108,6 +144,36 @@ document.addEventListener('DOMContentLoaded', () => {
             style.appendChild(newContent)
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
             newDiv.setAttribute("class", "text-center h5 col-lg-12 ");
+            newDiv.appendChild(style);
+            menu.appendChild(newDiv)
+        }
+    }
+    class Addon extends MenuItem {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+            super(itemName, price, mediumPrice, largePrice, extraInfo)
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const style = document.createElement("em");
+            const newContent = document.createTextNode(`🍕${this.itemName} ${this.price}`);
+            style.appendChild(newContent)
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", "text-center addon col-lg-12 ");
+            newDiv.appendChild(style);
+            menu.appendChild(newDiv)
+        }
+    }
+    class Note extends MenuItem {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+            super(itemName, price, mediumPrice, largePrice, extraInfo)
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const style = document.createElement("em");
+            const newContent = document.createTextNode(`🍕${this.itemName}`);
+            style.appendChild(newContent)
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", "text-center addon col-lg-12 ");
             newDiv.appendChild(style);
             menu.appendChild(newDiv)
         }
@@ -150,9 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
-            newDiv.appendChild(newTable);
-            menu.appendChild(newDiv);
-
+            menu.appendChild(newTable);
         }
     }
     class PizzaItem extends  MenuItem {
@@ -204,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
             newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
+            newSmallRow.setAttribute("class", "text-center");
+            newMedRow.setAttribute("class", "text-center");
+            newLgRow.setAttribute("class", "text-center");
             newTable.setAttribute("id", `deepDishMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -220,8 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
-            newDiv.appendChild(newTable);
-            menu.appendChild(newDiv);
+            menu.appendChild(newTable);
+            // menu.appendChild(newDiv);
 
         }
     }
@@ -272,9 +339,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center center  col-lg-12 align-center");
+            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
+            newSmallRow.setAttribute("class", "text-center");
+            newMedRow.setAttribute("class", "text-center");
+            newLgRow.setAttribute("class", "text-center");
             newTable.setAttribute("id", `specialPizzaMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -291,8 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
-            newDiv.appendChild(newTable);
-            menu.appendChild(newDiv);
+            menu.appendChild(newTable);
+            // menu.appendChild(newDiv);
 
         }
     }
@@ -313,6 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             const toppingsfill = document.createTextNode(`${this.extraInfo}`)
+            toppingsList.setAttribute("class", "addon")
             newRow.setAttribute("id", `${this.itemName.split(' ').join('')}`);
             newDesRow.setAttribute("class", "table-item");
             newDesRow.appendChild(newMainDes);
@@ -347,6 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             newTable.setAttribute("class", "text-center  col align-center center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
+            newSmallRow.setAttribute("class", "text-center");
+            newMedRow.setAttribute("class", "text-center");
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newTable.setAttribute("id", `sandMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
@@ -363,8 +436,8 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newMedRow);
 
             newTable.appendChild(newRow);
-            newDiv.appendChild(newTable);
-            menu.appendChild(newDiv);
+            menu.appendChild(newTable);
+            // menu.appendChild(newDiv);
 
         }
     }

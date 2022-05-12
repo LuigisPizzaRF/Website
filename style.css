@@ -1,8 +1,82 @@
-    .menubox{
-        min-width: 100px;
-        margin: 0px;
-        padding: 0px;
+    body{
+        background-color:black;
+        
     }
+    section{
+        background-color:bisque;
+    }
+    label{
+        width: 100%;
+    }
+    td {
+        font-size: calc(.85rem + 1vw);
+        padding: calc(.2em + .1vw);
+        padding-bottom: calc(.3 + .25vw);
+    }
+    #contactus {
+        background: #fff;
+        text-align: center;
+        padding: 4.5em .5em 4.5em .5em;
+        margin-bottom: 0;
+    }
+    #about-us {
+        margin: 0 0 0 0;
+        padding: 1em 0 1em 1em;
+    }
+    #faq {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    #media-bar{
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+    }
+    #facebook {
+        width: 320px;
+        margin: auto;
+    }
+    #map{
+        width:100%;
+    }
+    @media only screen and (min-width: 768px) {
+        #facebook{
+            width: 245px;
+            margin:0;
+        }
+
+    }
+    @media only screen and (min-width: 992px){
+
+        #facebook{
+            width: 325px;
+        }
+    }
+    @media only screen and (min-width: 1200px) {
+        #facebook {
+            width: 385px;
+        }
+
+    }
+    @media only screen and (min-width: 1400px){
+        #facebook{
+            width: 445px;
+        }
+
+    }
+    .no-pad{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .row {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .menu{
         min-width: 100px;
     }
@@ -11,40 +85,6 @@
         position: sticky;
         top: 0;
     }
-    #contactus {
-		background: #fff;
-		text-align: center;
-		padding: 4.5em .5em 4.5em .5em;
-		margin-bottom: 0;
-	}
-	hr {
-		position: relative;
-		display: block;
-		border: 0;
-		top: 4.5em;
-		margin-bottom: 9em;
-		height: 10px;
-
-	}
-
-		hr:before, hr:after {
-			content: '';
-			position: absolute;
-			top: -8px;
-			display: block;
-			width: 1px;
-			height: 1px;
-
-		}
-
-		hr:before {
-			left: -1px;
-		}
-
-		hr:after {
-			right: -1px;
-		}
-
 	.addon {
 		color: rgba(102, 102, 102, 0.904);
 		font-size: calc(.8rem + 1vw);
@@ -55,12 +95,20 @@
         font-weight: bold;
         padding-bottom:calc(.125em + 1vw);
         padding-top: calc(.125em + 1vw);
+        justify-content:center;
     }
     .food-item{
+        font-size:calc(1.5rem + 1vw);
+        padding-bottom:calc(.125em + 1vw);
+        padding-top: calc(.125em + 1vw);
+        justify-content:center;
+    }
+    .body-text{
         font-size:calc(1rem + 1vw);
         padding-bottom:calc(.125em + 1vw);
         padding-top: calc(.125em + 1vw);
     }
+
 
 .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
     position: relative;
@@ -74,13 +122,11 @@
         padding: calc(.2em + .1vw);
 
     }
-    td {
-        font-size: calc(.85rem + 1vw);
-        padding: calc(.2em + .1vw);
-        padding-bottom: calc(.3 + .25vw);
-    }
-    th{
-        font-size: calc(1 rem + 1vw);
+    .table-header {
+        font-size:calc(1.25rem + 1vw);
+        font-weight: bold;
+
+        padding-top: calc(.125em + 1vw);
     }
 
     .table-item {

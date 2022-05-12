@@ -1,97 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="CSVToArray.js"></script> 
-    <script src="index.js"></script> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="CSVToArray.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="bPAXn3uP"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="bPAXn3uP"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container"></div>
-    <div id="main page"  class="row  menubox">
-        
-        <!-- <section id="mediabar" class="row col-12 col-lg-4 ">
-            <div class="fb-page col-6 col-lg-12 " 
-            data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal" 
-            data-tabs="timeline, reviews" 
-            data-width="" 
-            data-height="" 
-            data-small-header="false" 
-            data-adapt-container-width="true" 
-            data-hide-cover="false" 
-            data-show-facepile="true">
-            <blockquote cite="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal" 
-            class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal">Luigi&#039;s Pizza</a></blockquote></div>
-            <div class=" col-6 col-lg-12">
-                <iframe
-                width="600"
-                height="450"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDJo_L21Ia2G_tmMuyHPaYM1S3SVUDB1uc
-                  &q=Space+Needle,Seattle+WA">
-              </iframe>
+    <div id="main page" class="container  menubox">
 
-            </div>
-        </section> -->
-        <section id="menu" class=" row col-12 col-lg-8  text-center">
-            <div class="display-1">
-Menu
-            </div>
+        <div class="row">
 
-        </section>
-        <hr>
-        <section id="contactus">
-            <header>
-                <h2>Do you have a team celebration, party, or large order? Why not have it at Luigi's?! <strong>Contact us below</strong>.</h2>
-                <p>
-                    Enter you information below and will be in contact to with you quickly about our options for large groups and parties.
-                </p>
-                <div class=" ">
+            <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
+                <div class="display-1">
+                    Menu
+                </div>
+                <div id="menu" class="container"></div>
+            </section>
 
-                    <div style="max: width 300px;;padding:30px">
+            <section id="media-bar" class="col col-sm-12 col-md-4 no-pad">
+                <div class=" row">
+                    <div id="facebook"class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
+                        data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
+                        data-width="500" data-hide-cover="false">
+                    </div>
+                    <div class="col-12">
+                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe> 
 
-                        <form name="contact" method="POST" data-netlify="true">
-                            <p>
-                                <label>Your Name: <input class="input"type="text" name="name" /></label>
-                            </p>
-                            <p>
-                                <label>Your Email: <input type="email" name="email" /></label>
-                            </p>
-                            <p>
-                                <label>Message: <textarea name="message"></textarea></label>
-                            </p>
-                            <p>
-                                <button class="btn btn-primary btn-block" type="submit">Send</button>
-                            </p>
-                        </form>
                     </div>
                 </div>
-            </header>
-        </section>
-        <section id="contactus" class="col-12">
-dsaf
-        </section>
+            </section>
+            <section id="faq" class="col-12">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Do you have delivery?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"> Yes 7 Days a week with 5 miles of rivers falls! just give us a call <a href="tel:(715) 425-0111">(715) 425-0111</a></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Do you do dine in? 
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Yes but only 4PM-8PM Monday, Thursday, and Saturday.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Can you do contactless delivery?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">We would be more than happy to accommodate your situation. just let us know where you would like the food left and how you would like us to let you know it there. </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </section>
+            <section id="about-us" class="row">
+                <header class="col-12 display-1 ">About us</header>
+                <div class="col-6">
+                    <p class="body-text">
+                        We are a small lovable pizza shop. Located in River Falls, Wi,. The bussiness started in 1952
+                        when
+                        bob boberson started luigis in college. For year Luigi's was confortable spot to eat and hangout
+                        for
+                        familes and college students alike. One day in 1996 a delivery driver by the name of "Chuck
+                        Komrowski" would purchase the spot with hand shake and a smile. Over the next 26 years Chuck
+                        would
+                        raise a family at Luigi's and serve Luigi's many pizza loving patrons.
+                    </p>
+                </div>
+                <div class="col-6">
+                    <img class="row img-responsive" src="young chuck.jpg" alt="">
+    
+                </div>
+            </section>
+            <section id="contactus" class="col-12">
+                <header>
+                    <h2>Do you have a team celebration, party, or large order? Why not have it at Luigi's?!
+                        <strong>Contact
+                            us below</strong>.
+                    </h2>
+                    <p class="body-text">
+                        Enter you information below and we will be in contact to with you quickly about our options for
+                        large
+                        groups and parties.
+                    </p>
+                    <div class=" ">
+    
+                        <div style="max: width 300px;;padding:30px">
+    
+                            <form name="contact" method="POST" data-netlify="true">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Name</label>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Mr Pepper E. Roni">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">About how many people?</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>5-10</option>
+                                        <option>10-25</option>
+                                        <option>25-50</option>
+                                        <option>50-100</option>
+                                        <option>100+!</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Any details that might help us serve
+                                        you:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <p>
+                                    <button class="btn btn-primary btn-block" type="submit">Send</button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+            </section>
+        </div>
+
     </div>
+
     <!-- //set up a json or other simple text object that can be pulled from by the
     // write and introduce json of the menu 
     // create loop to parse the json for menu items and headers
     // create object class constructor that makes a element for each menu item found 
     // format the menu item name  space and format the menu price
     // match up the location 
-    // make a list of where the categories are  --> 
+    // make a list of where the categories are  -->
 </body>
+
 </html>

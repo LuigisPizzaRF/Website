@@ -1,7 +1,12 @@
-//Example fetch using .
+function reportWindowSize(){
+    if(window.innerWidth === 956){
+        location.reload();
+    }
+    console.log(window.innerWidth)
+}
+window.onresize = reportWindowSize;
 document.addEventListener('DOMContentLoaded', () => {
     
-    let loaded = false;
     let menuCSV = [];
     const req = new XMLHttpRequest();
     req.open("GET", 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOhUtgq_YsSO7egE450S1KSVAx44W1gSjG1HPs_6RPfW64Fzrx7IrJUrbByVPIGv0pggi-NIa8k_0h/pub?output=csv', true);
@@ -93,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newP = document.createElement('p');
             const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center food-item col-md-4");
+            newDiv.setAttribute("class", "text-center food-item row col-xs-12 col-sm-4");
             newDiv.appendChild(newContent);
             if(this.mediumPrice != ""){
                 const newEm = document.createElement('em');
@@ -125,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
         }
         popListing() {
-            const newDiv = document.createElement("div");
+            const newDiv = document.createElement("h2");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", " food-cat col-12");
+            newDiv.setAttribute("class", " food-cat col-12 row text-center");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
@@ -196,10 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLgDes = document.createTextNode(`${this.largePrice}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  ");
-            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
-            newSmallRow.setAttribute("class", "text-center");
-            newMedRow.setAttribute("class", "text-center");
-            newLgRow.setAttribute("class", "text-center");
+            newTable.setAttribute("class", "text-center center col-lg-12 align-center ");
+            newSmallRow.setAttribute("class", "text-center table-header");
+            newMedRow.setAttribute("class", "text-center table-header");
+            newLgRow.setAttribute("class", "text-center table-header");
             newTable.setAttribute("id", `pizzaMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -268,9 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
             newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
-            newSmallRow.setAttribute("class", "text-center");
-            newMedRow.setAttribute("class", "text-center");
-            newLgRow.setAttribute("class", "text-center");
+            newSmallRow.setAttribute("class", "text-center table-header");
+            newMedRow.setAttribute("class", "text-center table-header");
+            newLgRow.setAttribute("class", "text-center table-header");
             newTable.setAttribute("id", `deepDishMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -342,9 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
             newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
-            newSmallRow.setAttribute("class", "text-center");
-            newMedRow.setAttribute("class", "text-center");
-            newLgRow.setAttribute("class", "text-center");
+            newSmallRow.setAttribute("class", "text-center table-header");
+            newMedRow.setAttribute("class", "text-center table-header");
+            newLgRow.setAttribute("class", "text-center table-header");
             newTable.setAttribute("id", `specialPizzaMenu`);
             newDesRow.setAttribute("id", `lgPizza`);
             newSmallRow.setAttribute("id", `smallPizza`);
@@ -418,8 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             newTable.setAttribute("class", "text-center  col align-center center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
-            newSmallRow.setAttribute("class", "text-center");
-            newMedRow.setAttribute("class", "text-center");
+            newSmallRow.setAttribute("class", "text-center table-header");
+            newMedRow.setAttribute("class", "text-center table-header");
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newTable.setAttribute("id", `sandMenu`);
             newDesRow.setAttribute("id", `lgPizza`);

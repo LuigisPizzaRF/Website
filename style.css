@@ -13,6 +13,10 @@
         padding: calc(.2em + .1vw);
         padding-bottom: calc(.3 + .25vw);
     }
+    /* html, body { overflow-x: hidden; } */
+    #topper.home{
+        padding-left: 0;
+    }
     #contactus {
         background: #fff;
         text-align: center;
@@ -35,10 +39,22 @@
     #facebook {
         width: 320px;
         margin: auto;
+        padding-bottom: 1em;
     }
     #map{
         width:100%;
     }
+    #header {
+		position: relative;
+		background-image: url("/img/pic01.jpg");
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		color: #fff;
+		text-align: center;
+		padding: 7.5em 0 2em 0;
+		cursor: default;
+	}
     @media only screen and (min-width: 768px) {
         #facebook{
             width: 245px;
@@ -71,10 +87,10 @@ box-shadow: 0px 10px 13px -7px #000000, 50px 50px 0px 50px rgba(0,0,0,0);
 border-radius: 3px;
     }
     .card{
-        background: #E6E6BE;
-        background: -moz-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
-        background: -webkit-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
-        background: linear-gradient(to bottom, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+background: #E6E6BE;
+background: -moz-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+background: -webkit-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+background: linear-gradient(to bottom, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
 border-radius: 3px;
     }
     .col-sm-4.beta-menu-item {
@@ -91,8 +107,8 @@ border-radius: 3px;
         padding-right: 0;
     }
     .container {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .menu{

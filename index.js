@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         menuCSV.forEach(e => {
             console.log(e[5]);
             if (e[5] === 'Single item') {
-                menuList.push(new MenuItemTile(e[0], e[1], e[2], e[3], e[4]));
-                menuLookup[e[0].split(' ').join(' ')] = new MenuItemTile(e[0], e[1], e[2], e[3], e[4]);
+                menuList.push(new MenuItem(e[0], e[1], e[2], e[3], e[4]));
+                menuLookup[e[0].split(' ').join(' ')] = new MenuItem(e[0], e[1], e[2], e[3], e[4]);
                 menuLookup[e[0].split(' ').join(' ')].popListing();
-            } else if (e[5] === 'Fo0od Category') {
+            } else if (e[5] === 'Food Category') {
                 menuList.push(new Category(e[0], e[1], e[2], e[3], e[4]));
                 menuLookup[e[0].split(' ').join(' ')] = new Category(e[0], e[1], e[2], e[3], e[4]);
                 menuLookup[e[0].split(' ').join(' ')].popListing();
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
+            newTable.setAttribute("class", "text-center center row col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newSmallRow.setAttribute("class", "text-center table-header");
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
-            menu.appendChild(newTable);
+            SpecialtyPizzas.appendChild(newTable);
             // menu.appendChild(newDiv);
 
         }

@@ -6,39 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="bPAXn3uP"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="CSVToArray.js"></script>
-    <script src="index.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
-        nonce="bPAXn3uP"></script>
+    <script src="carousel.js"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="main page" class="container  menubox">
+    <div class="container">
+        <section id="header" class="row header ">
+            <div style="padding-top:100px ; padding-bottom: 100px;">
+            You
+            <br>
+            Do you
+            <br>
+            And
+            <br>
+            ill do me
+            </div>
+
+        </section>
+    </div>
+    
+    
+    <div id="main page" class="container  ">
 
         <div class="row">
-            <section id="topper" class="col col-sm-12">
-                yo
-            </section>
-            <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
+            <!-- <section id="topper" class=" col col-sm-12">
+                <img class="col-12" src="/img/pic01.jpg" alt="">
+            </section> -->
+            <section id="menu-container" class="col  col-sm-12 col-md-8 no-pad text-center">
                 <div class="display-1">
                     Menu
                 </div>
-                
+
 
 
                 <div id="menu" class="row"></div>
             </section>
 
-            <section id="media-bar" class="col col-sm-12 col-md-4 no-pad">
-                <div class=" row">
+            <section id="media-bar" class=" home col-sm-12 col-md-4 no-pad">
+                <div class=" row col-12">
                     <div id="facebook" class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
                         data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
                         data-width="500" data-hide-cover="false">
@@ -62,7 +83,8 @@
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body"> Yes 7 Days a week with 5 miles of rivers falls! just give us a
+                            <div class="accordion-body"> Yes 7 Days a week within 5 miles of rivers falls! just give us
+                                a
                                 call <a href="tel:(715) 425-0111">(715) 425-0111</a></div>
                         </div>
                     </div>
@@ -97,7 +119,7 @@
                 </div>
 
             </section>
-            <section id="about-us" class="row">
+            <section id="about-us" class="row col-12">
                 <header class="col-12 display-1 ">About us</header>
                 <div class="col-6">
                     <p class="body-text">
@@ -113,8 +135,8 @@
                         raise a family at Luigi's and grow the size of Luigi's many pizza loving patrons.
                     </p>
                 </div>
-                <div class="col-6">
-                    <img class="row img-responsive" src="young chuck.jpg" alt="">
+                <div class="col-6  ">
+                    <img class="img-fluid rounded" src="young chuck.jpg" alt="">
 
                 </div>
             </section>

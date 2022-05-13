@@ -9,15 +9,11 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="CSVToArray.js"></script>
     <script src="index.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
         nonce="bPAXn3uP"></script>
@@ -28,22 +24,28 @@
     <div id="main page" class="container  menubox">
 
         <div class="row">
-
+            <section id="topper" class="col col-sm-12">
+                yo
+            </section>
             <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
                 <div class="display-1">
                     Menu
                 </div>
-                <div id="menu" class="container"></div>
+                
+
+
+                <div id="menu" class="row"></div>
             </section>
 
             <section id="media-bar" class="col col-sm-12 col-md-4 no-pad">
                 <div class=" row">
-                    <div id="facebook"class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
+                    <div id="facebook" class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
                         data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
                         data-width="500" data-hide-cover="false">
                     </div>
                     <div class="col-12">
-                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe> 
+                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe>
 
                     </div>
                 </div>
@@ -53,24 +55,27 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
                                 Do you have delivery?
                             </button>
                         </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body"> Yes 7 Days a week with 5 miles of rivers falls! just give us a call <a href="tel:(715) 425-0111">(715) 425-0111</a></div>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"> Yes 7 Days a week with 5 miles of rivers falls! just give us a
+                                call <a href="tel:(715) 425-0111">(715) 425-0111</a></div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                Do you do dine in? 
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Do you do dine in?
                             </button>
                         </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                            data-bs-parent="#accordionFlushExample">
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">Yes but only 4PM-8PM Monday, Thursday, and Saturday.</div>
                         </div>
                     </div>
@@ -84,29 +89,33 @@
                         </h2>
                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                             aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">We would be more than happy to accommodate your situation. just let us know where you would like the food left and how you would like us to let you know it there. </div>
+                            <div class="accordion-body">We would be more than happy to accommodate your situation. just
+                                let us know where you would like the food left and how you would like us to let you know
+                                it there. </div>
                         </div>
                     </div>
                 </div>
-    
+
             </section>
             <section id="about-us" class="row">
                 <header class="col-12 display-1 ">About us</header>
                 <div class="col-6">
                     <p class="body-text">
-                        We are a small lovable pizza shop. Located in River Falls, Wi,. The bussiness started in 1952
+                        We are a small lovable pizza shop. Located in River Falls, Wi,. The business started in 1982
                         when
-                        bob boberson started luigis in college. For year Luigi's was confortable spot to eat and hangout
+                        Bob Boberson started Luigi's in college. For years Luigi's was comfortable spot to eat and
+                        hangout
                         for
-                        familes and college students alike. One day in 1996 a delivery driver by the name of "Chuck
-                        Komrowski" would purchase the spot with hand shake and a smile. Over the next 26 years Chuck
+                        families and college students alike. One day in 1996 a delivery driver by the name of Charles
+                        "Chuck" Kamrowski would purchase the spot with hand shake and a smile. Over the next 26 years
+                        Chuck
                         would
-                        raise a family at Luigi's and serve Luigi's many pizza loving patrons.
+                        raise a family at Luigi's and grow the size of Luigi's many pizza loving patrons.
                     </p>
                 </div>
                 <div class="col-6">
                     <img class="row img-responsive" src="young chuck.jpg" alt="">
-    
+
                 </div>
             </section>
             <section id="contactus" class="col-12">
@@ -121,9 +130,9 @@
                         groups and parties.
                     </p>
                     <div class=" ">
-    
+
                         <div style="max: width 300px;;padding:30px">
-    
+
                             <form name="contact" method="POST" data-netlify="true">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Name</label>

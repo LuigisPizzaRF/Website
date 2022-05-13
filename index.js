@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         menuCSV.forEach(e => {
             console.log(e[5]);
             if (e[5] === 'Single item') {
-                menuList.push(new MenuItem(e[0], e[1], e[2], e[3], e[4]));
-                menuLookup[e[0].split(' ').join(' ')] = new MenuItem(e[0], e[1], e[2], e[3], e[4]);
+                menuList.push(new MenuItemTile(e[0], e[1], e[2], e[3], e[4]));
+                menuLookup[e[0].split(' ').join(' ')] = new MenuItemTile(e[0], e[1], e[2], e[3], e[4]);
                 menuLookup[e[0].split(' ').join(' ')].popListing();
-            } else if (e[5] === 'Food Category') {
+            } else if (e[5] === 'Fo0od Category') {
                 menuList.push(new Category(e[0], e[1], e[2], e[3], e[4]));
                 menuLookup[e[0].split(' ').join(' ')] = new Category(e[0], e[1], e[2], e[3], e[4]);
                 menuLookup[e[0].split(' ').join(' ')].popListing();
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newP = document.createElement('p');
             const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center food-item row col-xs-12 col-sm-4");
+            newDiv.setAttribute("class", "text-center food-item  col-12 col-xs-12 col-sm-4");
             newDiv.appendChild(newContent);
             if(this.mediumPrice != ""){
                 const newEm = document.createElement('em');
@@ -110,6 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 newDiv.appendChild(newEm);
             }
             menu.appendChild(newDiv)
+        }
+    }
+    class MenuItemTile extends MenuItem {
+        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
+            super(itemName, price, mediumPrice, largePrice, extraInfo)
+        }
+        popListing() {
+            const newDiv = document.createElement("div");
+            const newCard = document.createElement('div');
+            const newCardBody = document.createElement("div");
+            const newCardTitle = document.createElement("h5");
+            const newCardSub = document.createElement("h6");
+            const newCardText = document.createElement("p");
+            const cardTitle = document.createTextNode(`${this.itemName}`);
+            const cardSub = document.createTextNode(`${this.price}`);
+            const cardText = document.createTextNode(`${this.mediumPrice}`)
+            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
+            newDiv.setAttribute("class", "col-sm-4 beta-menu-item");
+            newCard.setAttribute("class", "card");
+            newCardBody.setAttribute("class", "card-body");
+            newCardTitle.setAttribute("class", "card-title");
+            newCardSub.setAttribute("class", "card-subtitle mb-2 text-muted");
+            newCardText.setAttribute("class", "card-text");
+            newCardTitle.appendChild(cardTitle);
+            newCardSub.appendChild(cardSub);
+            newCardText.appendChild(cardText);
+            newCardBody.appendChild(newCardTitle);
+            newCardBody.appendChild(newCardSub);
+            newCardBody.appendChild(newCardText);
+            newCard.appendChild(newCardBody);
+            newDiv.appendChild(newCard);
+            menu.appendChild(newDiv);
         }
     }
     class Toppings extends MenuItem {

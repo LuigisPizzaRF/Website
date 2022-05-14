@@ -98,8 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const newP = document.createElement('p');
             const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center food-item  col-12 col-xs-12 col-sm-4");
+            newDiv.setAttribute("class", "text-center food-item row col-xs-12 col-sm-4");
             newDiv.appendChild(newContent);
+            if(this.largePrice != ""){
+                const newStrong = document.createElement('p');
+                const newBr = document.createElement('br');
+                const newEmContent = document.createTextNode(`${this.largePrice}`);
+                newStrong.setAttribute("class", "sizes")
+                newStrong.appendChild(newEmContent);
+                newDiv.appendChild(newBr);
+                newDiv.appendChild(newStrong);
+            }
             if(this.mediumPrice != ""){
                 const newEm = document.createElement('em');
                 const newBr = document.createElement('br');
@@ -112,38 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.appendChild(newDiv)
         }
     }
-    class MenuItemTile extends MenuItem {
-        constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
-            super(itemName, price, mediumPrice, largePrice, extraInfo)
-        }
-        popListing() {
-            const newDiv = document.createElement("div");
-            const newCard = document.createElement('div');
-            const newCardBody = document.createElement("div");
-            const newCardTitle = document.createElement("h5");
-            const newCardSub = document.createElement("h6");
-            const newCardText = document.createElement("p");
-            const cardTitle = document.createTextNode(`${this.itemName}`);
-            const cardSub = document.createTextNode(`${this.price}`);
-            const cardText = document.createTextNode(`${this.mediumPrice}`)
-            newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "col-sm-4 beta-menu-item");
-            newCard.setAttribute("class", "card");
-            newCardBody.setAttribute("class", "card-body");
-            newCardTitle.setAttribute("class", "card-title");
-            newCardSub.setAttribute("class", "card-subtitle mb-2 text-muted");
-            newCardText.setAttribute("class", "card-text");
-            newCardTitle.appendChild(cardTitle);
-            newCardSub.appendChild(cardSub);
-            newCardText.appendChild(cardText);
-            newCardBody.appendChild(newCardTitle);
-            newCardBody.appendChild(newCardSub);
-            newCardBody.appendChild(newCardText);
-            newCard.appendChild(newCardBody);
-            newDiv.appendChild(newCard);
-            menu.appendChild(newDiv);
-        }
-    }
     class Toppings extends MenuItem {
         constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
             super(itemName, price, mediumPrice, largePrice, extraInfo)
@@ -152,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newDiv = document.createElement("div");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", " food-item col-12");
+            newDiv.setAttribute("class", " topping col-12");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }
@@ -376,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSmDes = document.createTextNode(`${this.price}`);
             const newMdDes = document.createTextNode(`${this.mediumPrice}`);
             const newLgDes = document.createTextNode(`${this.largePrice}`);
-            newTable.setAttribute("class", "text-center center row col-lg-12 align-center");
+            newTable.setAttribute("class", "text-center center col-lg-12 align-center");
             newDiv.setAttribute("id", `${this.itemName.split(' ').join(' ')}`);
             newDiv.setAttribute("class", "text-center  col-lg-12 ");
             newSmallRow.setAttribute("class", "text-center table-header");
@@ -398,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newRow.appendChild(newLgRow);
 
             newTable.appendChild(newRow);
-            SpecialtyPizzas.appendChild(newTable);
+            menu.appendChild(newTable);
             // menu.appendChild(newDiv);
 
         }

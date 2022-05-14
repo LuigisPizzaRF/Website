@@ -9,76 +9,60 @@
         width: 100%;
     }
     td {
-        font-size: calc(.85rem + 1vw);
-        padding: calc(.2em + .1vw);
+        font-size: calc(.75rem + 1vw);
+        padding: calc(.1em + .1vw);
         padding-bottom: calc(.3 + .25vw);
+    }
+    html, body { overflow-x: hidden; }
+    #media-bar{
+        padding-top: 10px;
+    }
+    #topper.home{
+        padding-left: 0;
     }
     #contactus {
         background: #fff;
         text-align: center;
-        padding: 4.5em .5em 4.5em .5em;
+    
         margin-bottom: 0;
     }
-    #about-us {
-        margin: 0 0 0 0;
-        padding: 1em 0 1em 1em;
-    }
-    #faq {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    #media-bar{
-        padding-left: 0;
-        padding-right: 0;
-        justify-content: center;
-    }
+
     #facebook {
-        width: 320px;
-        margin: auto;
+        width: 100%;
+     
+        padding-bottom: 1em;
     }
     #map{
         width:100%;
     }
-    @media only screen and (min-width: 768px) {
-        #facebook{
-            width: 245px;
-            margin:0;
-        }
-
+    #header {
+        margin-bottom: 10px;
+	}
+    .card-body{
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 50px 50px 0px 50px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 50px 50px 0px 50px rgba(0,0,0,0);
+border-radius: 3px;
     }
-    @media only screen and (min-width: 992px){
-
-        #facebook{
-            width: 325px;
-        }
+    .card{
+background: #E6E6BE;
+background: -moz-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+background: -webkit-linear-gradient(top, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+background: linear-gradient(to bottom, #E6E6BE 0%, #1C6EA4 51%, #BEBEE6 100%);
+border-radius: 3px;
     }
-    @media only screen and (min-width: 1200px) {
-        #facebook {
-            width: 385px;
-        }
-
-    }
-    @media only screen and (min-width: 1400px){
-        #facebook{
-            width: 445px;
-        }
-
+    .col-sm-4.beta-menu-item {
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 10px;
     }
     .no-pad{
         padding-right: 0;
         padding-left: 0;
     }
-    .row {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
 
-    .menu{
-        min-width: 100px;
+    .sizes{
+        font-size: calc(.5rem + 1vw);
+        font-weight: 500;
     }
     .sticky {
         position: -webkit-sticky;
@@ -98,7 +82,7 @@
         justify-content:center;
     }
     .food-item{
-        font-size:calc(1.5rem + 1vw);
+        font-size:calc(1.25rem + 1vw);
         padding-bottom:calc(.125em + 1vw);
         padding-top: calc(.125em + 1vw);
         justify-content:center;
@@ -133,9 +117,6 @@
     font-size: calc(.95rem + 1vw);
     font-weight: bolder;
     }
-    .center {
-        margin:auto;
-        }
 
 /* 
 @media (min-width: 481px) and (max-width: 767px) {

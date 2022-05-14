@@ -100,6 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
             newDiv.setAttribute("class", "text-center food-item row col-xs-12 col-sm-4");
             newDiv.appendChild(newContent);
+            if(this.largePrice != ""){
+                const newStrong = document.createElement('p');
+                const newBr = document.createElement('br');
+                const newEmContent = document.createTextNode(`${this.largePrice}`);
+                newStrong.setAttribute("class", "sizes")
+                newStrong.appendChild(newEmContent);
+                newDiv.appendChild(newBr);
+                newDiv.appendChild(newStrong);
+            }
             if(this.mediumPrice != ""){
                 const newEm = document.createElement('em');
                 const newBr = document.createElement('br');
@@ -120,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newDiv = document.createElement("div");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", " food-item col-12");
+            newDiv.setAttribute("class", " topping col-12");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }

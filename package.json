@@ -1,5 +1,28 @@
 {
   "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
     "jquery": "^3.6.0"
-  }
+  },
+  "name": "luigis",
+  "version": "1.0.0",
+  "description": "Static page for a pizza reasturant using bootstrap and jquery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheKingofRF/Luigis.git"
+  },
+  "keywords": [
+    "resturant",
+    "jquery",
+    "boostrap"
+  ],
+  "author": "Mason Unger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheKingofRF/Luigis/issues"
+  },
+  "homepage": "https://github.com/TheKingofRF/Luigis#readme"
 }

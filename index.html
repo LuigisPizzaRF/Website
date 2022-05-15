@@ -26,30 +26,25 @@
 
 <body>
     
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <!-- <nav style="position: fixed;"class="menu_open navbar_nav ">
+        <a href="#"> <img src="/LOGO.png" height="80px" alt="" srcset=""></a>
+        <a href="#" id="menu-acces" class="menu_a">🤍</a>
+        <ul class="menu_open navbar_ul">
+          <li class="menu_li">
+            <a class="menu_a" href="#header">Home</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#menu-link">Menu</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#faq">FAQs</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#about-us">Contact Us</a>
+          </li>
+        </ul>
+      </nav> -->
+      
         <!-- <nav id="navbar" style="position: fixed;"class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     
             <a class="navbar-brand loc" href="#">
@@ -98,7 +93,7 @@
                 <img class="col-12" src="/img/pic01.jpg" alt="">
             </section> -->
             <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
-                <a class="anchor" id="top"></a>
+                <a class="anchor" id="menu-link"></a>
                 <div id="menu-top" class="display-1">
                     Menu
                 </div>
@@ -242,6 +237,27 @@
             </header>
         </section>
     </div>
+    <script>
+        $(document).ready(function(){
+  responsive_menu = $('.navbar_ul');
+  $('#menu-acces').on('click', function(e) {
+    e.preventDefault();
+    responsive_menu.slideToggle();
+  });
+  $(window).resize(function(){
+    var obtener_ancho = $(this).width(); 
+    if(obtener_ancho > 480 && responsive_menu.is(':hidden')) {
+      responsive_menu.removeAttr('style');
+    }
+  }); 
+  $('nav li').on('click', function(e) {                
+    var obtener_ancho = $(window).width();
+    if(obtener_ancho < 480 ) {
+      responsive_menu.slideToggle(); 
+    }
+  });
+});
+    </script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/@popperjs\core/dist/esm/popper.js"></script>

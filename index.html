@@ -267,17 +267,17 @@
                         <form name="contact" method="POST" data-netlify="true">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                <input name='name'type="text" class="form-control" id="contactusname"
                                     placeholder="Mr Pepper E. Roni">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                <input name="email"type="email" class="form-control" id="email"
                                     placeholder="name@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">About how many people?</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select name="People:" class="form-control" id="exampleFormControlSelect1">
                                     <option>5-10</option>
                                     <option>10-25</option>
                                     <option>25-50</option>
@@ -288,7 +288,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Any details that might help us serve
                                     you:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="extra-info" class="form-control" id="contactus-extra-details" rows="3"></textarea>
                             </div>
                             <p>
                                 <button class="btn btn-primary btn-block" type="submit">Send</button>

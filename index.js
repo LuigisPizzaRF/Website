@@ -1,11 +1,11 @@
-function reportWindowSize(){
-    if(window.innerWidth === 956){
-        location.reload();
-    }
-    console.log(window.innerWidth)
-}
-window.onresize = reportWindowSize;
-document.addEventListener('DOMContentLoaded', () => {
+// function reportWindowSize(){
+//     if(window.innerWidth === 956){
+//         location.reload();
+//     }
+//     console.log(window.innerWidth)
+// }
+// window.onresize = reportWindowSize;
+
     
     let menuCSV = [];
     const req = new XMLHttpRequest();
@@ -20,12 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuLookup = {};
     function logMenu(passedList) {
         menuCSV = passedList;
-        console.log(menuCSV)
         fillMenu(passedList)
     }
     function fillMenu(passMenu) {
         menuCSV.forEach(e => {
-            console.log(e[5]);
             if (e[5] === 'Single item') {
                 menuList.push(new MenuItem(e[0], e[1], e[2], e[3], e[4]));
                 menuLookup[e[0].split(' ').join(' ')] = new MenuItem(e[0], e[1], e[2], e[3], e[4]);
@@ -95,18 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         popListing() {
             const newDiv = document.createElement("div");
-            const newP = document.createElement('p');
-            const newContent = document.createTextNode(`${this.itemName} ${this.price}`);
+            const newName = document.createElement('p');
+            const br = document.createElement('br');
+            const newPrice = document.createElement('p');
+            const name = document.createTextNode(`${this.itemName}`)
+            const price = document.createTextNode(`${this.price}`)
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center food-item row col-xs-12 col-sm-4");
-            newDiv.appendChild(newContent);
+            newDiv.setAttribute("class", "text-center food-item  col-xs-12 col-sm-5");
+            newName.appendChild(name);
+            newPrice.appendChild(price);
+            newDiv.appendChild(newName);
+            newDiv.appendChild(newPrice);
             if(this.largePrice != ""){
                 const newStrong = document.createElement('p');
                 const newBr = document.createElement('br');
                 const newEmContent = document.createTextNode(`${this.largePrice}`);
                 newStrong.setAttribute("class", "sizes")
                 newStrong.appendChild(newEmContent);
-                newDiv.appendChild(newBr);
                 newDiv.appendChild(newStrong);
             }
             if(this.mediumPrice != ""){
@@ -115,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newEmContent = document.createTextNode(`${this.mediumPrice}`);
                 newEm.setAttribute("class", "addon")
                 newEm.appendChild(newEmContent);
-                newDiv.appendChild(newBr);
+
                 newDiv.appendChild(newEm);
             }
             menu.appendChild(newDiv)
@@ -488,4 +491,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let menuItemsList = [];
 
-});
+

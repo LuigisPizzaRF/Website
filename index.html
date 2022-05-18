@@ -5,57 +5,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script src="CSVToArray.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
         nonce="bPAXn3uP"></script>
     <link rel="stylesheet" href="style.css">
+
+    <title>Luigi's test page
+    </title>
 </head>
 
 <body>
+
+
+
+    <!-- //////////////////////////////////// -->
+    <!-- <nav style="position: fixed;"class="menu_open navbar_nav ">
+        <a href="#"> <img src="/LOGO.png" height="80px" alt="" srcset=""></a>
+        <a href="#" id="menu-acces" class="menu_a">🤍</a>
+        <ul class="menu_open navbar_ul">
+          <li class="menu_li">
+            <a class="menu_a" href="#header">Home</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#menu-link">Menu</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#faq">FAQs</a>
+          </li>
+          <li class="menu_li">
+            <a class="menu_a" href="#about-us">Contact Us</a>
+          </li>
+        </ul>
+      </nav> -->
+    <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg bg-light float-start">
+        <div class="container-fluid">
+            <div class="row">
+                <a id="headertext" class="navbar-brand loc  col-4  align-self-center" href="#">
+                    <img id='logo'src="/LOGO.png"  class="d-inline-block align-top img-fluid" alt="">
+                </a>
+                <div class="col-7 col-md-4 align-self-center">
+                    <a href="#map-link">
+                        <p id="headertext" class="navbar-brand col-12 loc" >
+                            101 Locust st, River Falls, Wi,
+                        </p>
+                    </a>
+                    <a id="headertext" class="navbar-brand  col-12 loc " href="tel:7154250111">Call us 715-425-0111</a>
+
+                </div>
+
+
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news-link">Whats new?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-link">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-link">Contact us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            FAQs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#faq-link">Action</a></li>
+                            <li><a class="dropdown-item" href="#faq-link">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav> -->
     <div class="container">
         <section id="header" class="row header ">
 
-            <img class="img-fluid no-pad"src="/img/cover photo.png" alt="" srcset="">
+            <img class="img-fluid no-pad" src="img/cover photo.png" alt="" srcset="">
 
         </section>
     </div>
-
-
     <div id="main page" class="container  ">
 
         <div class="row">
-            <!-- <section id="topper" class=" col col-sm-12">
-                <img class="col-12" src="/img/pic01.jpg" alt="">
-            </section> -->
             <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
-                <div class="display-1">
+                <a class="anchor" id="menu-link"></a>
+                <div id="menu-top" class="display-1">
                     Menu
                 </div>
-                <div id="menu" class="container"></div>
+
+
+
+                <div id="menu" class="row"></div>
             </section>
 
             <section id="media-bar" class=" home col-sm-12 col-md-4">
+                <a class="anchor" id="news-link"></a>
                 <div class="  col-12">
                     <div id="facebook" class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
                         data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
                         data-width="500" data-hide-cover="false">
                     </div>
                     <div class="col-12">
-                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe> 
+                        <a class="anchor" id="map-link"></a>
+                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe>
 
                     </div>
                 </div>
@@ -65,6 +180,7 @@
     <div id="extras" class="container">
 
         <section id="faq" class="row">
+            <a class="anchor" id="faq-link"></a>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
@@ -111,6 +227,7 @@
 
         </section>
         <section id="about-us" class="row ">
+            <a class="anchor" id="about-link"></a>
             <header class="col-12 display-1 ">About us</header>
             <div class="col-12 col-sm-6">
                 <p class="body-text">
@@ -132,6 +249,7 @@
             </div>
         </section>
         <section id="contactus" class="row">
+            <a class="anchor" id="contact-link"></a>
             <header class="col">
                 <h2>Do you have a team celebration, party, or large order? Why not have it at Luigi's?!
                     <strong>Contact
@@ -144,22 +262,22 @@
                 </p>
                 <div class=" ">
 
-                    <div >
+                    <div>
 
                         <form name="contact" method="POST" data-netlify="true">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                <input name='name'type="text" class="form-control" id="contactusname"
                                     placeholder="Mr Pepper E. Roni">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                <input name="email"type="email" class="form-control" id="email"
                                     placeholder="name@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">About how many people?</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select name="People:" class="form-control" id="exampleFormControlSelect1">
                                     <option>5-10</option>
                                     <option>10-25</option>
                                     <option>25-50</option>
@@ -170,7 +288,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Any details that might help us serve
                                     you:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="extra-info" class="form-control" id="contactus-extra-details" rows="3"></textarea>
                             </div>
                             <p>
                                 <button class="btn btn-primary btn-block" type="submit">Send</button>
@@ -181,6 +299,32 @@
             </header>
         </section>
     </div>
+    <!-- <script>
+        $(document).ready(function(){
+  responsive_menu = $('.navbar_ul');
+  $('#menu-acces').on('click', function(e) {
+    e.preventDefault();
+    responsive_menu.slideToggle();
+  });
+  $(window).resize(function(){
+    var obtener_ancho = $(this).width(); 
+    if(obtener_ancho > 480 && responsive_menu.is(':hidden')) {
+      responsive_menu.removeAttr('style');
+    }
+  }); 
+  $('nav li').on('click', function(e) {                
+    var obtener_ancho = $(window).width();
+    if(obtener_ancho < 480 ) {
+      responsive_menu.slideToggle(); 
+    }
+  });
+});
+    </script> -->
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="CSVToArray.js"></script>
+    <script src="index.js"></script>
 
 
     <!-- //set up a json or other simple text object that can be pulled from by the

@@ -43,6 +43,7 @@ body {
 
 #logo {
     width: 100%;
+    padding-bottom: 10px;
 }
 
 #contactus {
@@ -80,6 +81,9 @@ a.anchor {
     position: relative;
     top: -142px;
     visibility: hidden;
+}
+p.bold {
+    font-weight: bold;
 }
 .menuPic{
     display: none;

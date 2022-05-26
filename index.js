@@ -6,24 +6,24 @@
 // }
 // window.onresize = reportWindowSize;
 
-    
+    // request to pull the google sheet
     let menuCSV = [];
     const req = new XMLHttpRequest();
     req.open("GET", 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOhUtgq_YsSO7egE450S1KSVAx44W1gSjG1HPs_6RPfW64Fzrx7IrJUrbByVPIGv0pggi-NIa8k_0h/pub?output=csv', true);
     req.send();
     req.onload = function () {
-        menuCSV = CSVToArray(req.response)
+        menuCSV = CSVToArray(req.response)// translating the CSV into Arrays
         logMenu(menuCSV)
     };
 
-    const menuList = [];
-    const menuLookup = {};
-    function logMenu(passedList) {
+    const menuList = [];//dictionary for the menu objects
+    const menuLookup = {}; //hash table for menu objects
+    function logMenu(passedList) {// passing the array of menu items into the Menu populating function.
         menuCSV = passedList;
         fillMenu(passedList)
     }
     function fillMenu(passMenu) {
-        menuCSV.forEach(e => {
+        menuCSV.forEach(e => { // reading the stored array of menu items and determining what category they belong to.
             if (e[5] === 'Single item') {
                 menuList.push(new MenuItem(e[0], e[1], e[2], e[3], e[4]));
                 menuLookup[e[0].split(' ').join(' ')] = new MenuItem(e[0], e[1], e[2], e[3], e[4]);
@@ -83,7 +83,7 @@
             }
         });
     }
-    class MenuItem {
+    class MenuItem { // mother class of most items takes all the available data 
         constructor(itemName, price, mediumPrice, largePrice, extraInfo) {
             this.itemName = itemName;
             this.price = price;
@@ -99,7 +99,8 @@
             const name = document.createTextNode(`${this.itemName}`)
             const price = document.createTextNode(`${this.price}`)
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", "text-center food-item  col-xs-12 col-sm-5");
+            newDiv.setAttribute("class", "text-center food-item  col-xs-12 col-sm-6");
+            newName.setAttribute("class", "bold");
             newName.appendChild(name);
             newPrice.appendChild(price);
             newDiv.appendChild(newName);
@@ -145,7 +146,7 @@
             const newDiv = document.createElement("h2");
             const newContent = document.createTextNode(`${this.itemName}`);
             newDiv.setAttribute("id", `${this.itemName.split(' ').join('')}`);
-            newDiv.setAttribute("class", " food-cat col-12 row text-center");
+            newDiv.setAttribute("class", " food-cat col-12  ");
             newDiv.appendChild(newContent);
             menu.appendChild(newDiv)
         }

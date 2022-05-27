@@ -2,6 +2,7 @@ body {
     background-color: black;
 
 }
+
 section {
     background-color: bisque;
 }
@@ -20,23 +21,31 @@ html,
 body {
     overflow-x: hidden;
 }
+#contacts{
+    justify-content: end;
+}
 
-#headertext{
+#headertext {
     font-size: calc(.75rem + 1vw);
-    padding-top: 0 ;
+    padding-top: 0;
     padding-bottom: 0;
     text-decoration: none;
 }
+
 #media-bar {
     padding-top: 10px;
+
 }
 
 #topper.home {
     padding-left: 0;
 }
-#logo{
-    width: 50%;
+
+#logo {
+    width: 100%;
+    padding-bottom: 10px;
 }
+
 #contactus {
     background: #fff;
     text-align: center;
@@ -59,51 +68,6 @@ body {
     margin-top: 150px;
 }
 
-a.anchor {
-    display: block;
-    position: relative;
-    top: -75px;
-    visibility: hidden;
-}
-/* test  */
-.navbar_nav {
-    height: 50px;
-    background-color: #F44336;
-    position: absolute;
-    z-index: 3;
-}
-
-.navbar_nav,
-.menu_a {
-    width: 100%;
-}
-
-.menu_li,
-.menu_a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-}
-
-.menu_li {
-    width: 25%;
-    float: left;
-    opacity: 0.8;
-    text-align: center;
-    height: 50px;
-    text-decoration: none;
-    background-color: #F44336;
-}
-
-.menu_a {
-    padding: 16px 0;
-}
-
-.menu_li:hover,
-.menu_a:hover {
-    background-color: #03A9F4;
-    opacity: 1;
-}
 
 #menu-acces {
     display: none;
@@ -112,33 +76,27 @@ a.anchor {
     text-align: center;
 }
 
-.menu_open:after {
-    content: "";
-    display: table;
+a.anchor {
+    display: block;
+    position: relative;
+    top: -142px;
+    visibility: hidden;
 }
-
-@media only screen and (max-width: 480px) {
-
-    #menu-acces {
+p.bold {
+    font-weight: bold;
+}
+.menuPic{
+    display: none;
+}
+@media only screen and (min-width: 768px) {
+    .menuPic{
         display: block;
     }
-
-    .navbar_ul {
-        display: none;
-    }
-
-    .menu_li {
-        width: 100%;
-        position: relative;
-        opacity: 1;
-    }
-
-    .menu_open {
-        height: auto;
-    }
-
+  }
+.logo {
+    margin:auto;
 }
- /* Test */
+
 .navbar {
     width: 100%;
 }
@@ -165,8 +123,8 @@ a.anchor {
 
 .loc {
     color: black;
-    
-    
+
+
 }
 
 .loc:hover {
@@ -228,7 +186,7 @@ a.anchor {
 }
 
 
-.col-lg-1,
+/* .col-lg-1,
 .col-lg-10,
 .col-lg-11,
 .col-lg-12,
@@ -280,7 +238,7 @@ a.anchor {
     min-height: 1px;
     padding-right: 30px;
     padding-left: 30px;
-}
+} */
 
 .navbar-brand {
     font-size: calc(2rem + 1vw);

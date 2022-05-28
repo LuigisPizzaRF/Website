@@ -160,7 +160,7 @@ class MenuItem {
     }
     popListing() {
         const newDiv = document.createElement("div");
-        const newName = document.createElement("p");
+        const newName = document.createElement("h1");
         const br = document.createElement("br");
         const newPrice = document.createElement("p");
         const name = document.createTextNode(`${this.itemName}`);

@@ -1,6 +1,7 @@
 body {
     background-color: black;
-
+    position: relative;
+    top: 90px;
 }
 
 section {
@@ -16,7 +17,9 @@ td {
     padding: calc(.1em + .1vw);
     padding-bottom: calc(.3 + .25vw);
 }
-
+ul{
+    list-style: none;
+}
 html,
 body {
     overflow-x: hidden;
@@ -42,7 +45,8 @@ body {
 }
 
 #logo {
-    width: 100%;
+    width: 192px;
+    height:auto;
     padding-bottom: 10px;
 }
 

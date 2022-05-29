@@ -200,12 +200,30 @@ class Toppings extends MenuItem {
         super(itemName, price, mediumPrice, largePrice, extraInfo);
     }
     popListing() {
-        const newDiv = document.createElement("div");
-        const newContent = document.createTextNode(`${this.itemName}`);
-        newDiv.setAttribute("id", `${this.itemName.split(" ").join("")}`);
-        newDiv.setAttribute("class", " topping col-12");
-        newDiv.appendChild(newContent);
-        menu.appendChild(newDiv);
+        let toppings = this.itemName.split(", ");
+        console.log(toppings);
+        const newUL = document.createElement("ul");
+        const newUlTwo = document.createElement("ul");
+        for (let i = 0; i < toppings.length; i += 2) {
+            const next = i + 1;
+            const newContent = document.createTextNode(`${toppings[i]}`);
+            const newContentTwo = document.createTextNode(`${toppings[next]}`);
+
+            const newLi = document.createElement("li");
+            const newLiTwo = document.createElement("li");
+            newLi.appendChild(newContent);
+            newLiTwo.appendChild(newContentTwo);
+            newUL.appendChild(newLi);
+            if (toppings[next] != undefined) {
+                newUlTwo.appendChild(newLiTwo);
+            }
+        }
+        newUL.setAttribute("id", `Toppings`);
+        newUlTwo.setAttribute("id", `Toppings`);
+        newUL.setAttribute("class", " topping col-6");
+        newUlTwo.setAttribute("class", " topping col-6");
+        menu.appendChild(newUL);
+        menu.appendChild(newUlTwo);
     }
 }
 class Category extends MenuItem {

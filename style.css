@@ -17,7 +17,9 @@ td {
     padding: calc(.1em + .1vw);
     padding-bottom: calc(.3 + .25vw);
 }
-
+ul{
+    list-style: none;
+}
 html,
 body {
     overflow-x: hidden;

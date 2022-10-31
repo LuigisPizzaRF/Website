@@ -1,5 +1,7 @@
 body {
-    background-color: black;
+    color: black;
+    background: black;
+    background-color:#000000;
     position: relative;
     top: 90px;
 }

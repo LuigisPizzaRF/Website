@@ -72,7 +72,11 @@ body {
     margin-top: 150px;
 }
 
+#menu {
+    
 
+    
+}
 #menu-acces {
     display: none;
     width: 100%;
@@ -169,6 +173,9 @@ p.bold {
 }
 
 .food-cat {
+    background: rgba(255, 255, 255, 0.637);
+    border:#000000;
+    border-radius: .5em;
     font-size: calc(1.5rem + 1vw);
     font-weight: bold;
     padding-bottom: calc(.125em + 1vw);
@@ -177,6 +184,8 @@ p.bold {
 }
 
 .food-item {
+
+
     font-size: calc(1.25rem + 1vw);
     padding-bottom: calc(.125em + 1vw);
     padding-top: calc(.125em + 1vw);

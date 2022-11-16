@@ -11,7 +11,7 @@ let menuCSV = [];
 const req = new XMLHttpRequest();
 req.open(
     "GET",
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOhUtgq_YsSO7egE450S1KSVAx44W1gSjG1HPs_6RPfW64Fzrx7IrJUrbByVPIGv0pggi-NIa8k_0h/pub?output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaJd1GOJS1sNeQPyRcxRQ6_KRVftgg6xS8tIf57NwlK4dx0tSyMBJCYDbUuAa7ZtJ-dZCBFTfOhk9p/pub?output=csv",
     true
 );
 req.send();

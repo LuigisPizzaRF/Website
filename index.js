@@ -49,8 +49,8 @@ function fillMenu(passMenu) {
             menuLookup[e[0].split(" ").join(" ")] = new Description(e[0]);
             menuLookup[e[0].split(" ").join(" ")].popListing();
         } else if (e[5] === "Addon") {
-            menuList.push(new Addon(e[0]));
-            menuLookup[e[0].split(" ").join(" ")] = new Addon(e[0]);
+            menuList.push(new Addon(e[0],e[2]));
+            menuLookup[e[0].split(" ").join(" ")] = new Addon(e[0],e[1]);
             menuLookup[e[0].split(" ").join(" ")].popListing();
         } else if (e[5] === "Note") {
             menuList.push(new Note(e[0]));
@@ -255,8 +255,8 @@ class Description extends MenuItem {
     }
 }
 class Addon extends MenuItem {
-    constructor(itemName) {
-        super(itemName);
+    constructor(itemName, price) {
+        super(itemName, price);
     }
     popListing() {
         const newDiv = document.createElement("div");

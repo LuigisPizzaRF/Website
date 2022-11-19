@@ -1,292 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"> -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <!-- CSS only -->
+        <title>Luigi's Pizza</title>
+    </head>
 
-    <title>Luigi's test page</title>
-</head>
-
-<body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
-        nonce="bPAXn3uP"></script>
-    <nav id="navbar" class="navbar fixed-top navbar-expand-lg bg-light float-start">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col  ">
-                    <a class="navbar-brand" href="#">
-                        <img id='logo' src="/img/LOGO.png" class=" justify-content-end" alt="">
-                    </a>
-                </div>
-                <div id="contacts" class=" col-10 align-self-end no-pad">
-                    <a id="headertext" href="#map-link" class="navbar-brand col-12 loc">
-                        101 E Locust st, River Falls, Wi,
-                    </a>
-                    <a id="headertext" class="navbar-brand  col-12 loc " href="tel:7154250111">Call us 715-425-0111</a>
-                </div>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#menu-link">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#news-link">Whats new?</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about-link">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#faq-link">FAQs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact-link">Contact us</a>
-                        </li>
-                    </ul>
+    <body>
+        <div id="fb-root"></div>
+        <script
+            async
+            defer
+            crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+            nonce="bPAXn3uP"
+        ></script>
+        <nav
+            id="navbar"
+            class="navbar fixed-top navbar-expand-lg bg-light float-start"
+        >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <a class="navbar-brand" href="#">
+                            <img
+                                id="logo"
+                                src="/img/LOGO.png"
+                                class="justify-content-end"
+                                alt=""
+                            />
+                        </a>
+                    </div>
+                    <div id="contacts" class="col-10 align-self-end no-pad">
+                        <a
+                            id="headertext"
+                            href="#map-link"
+                            class="navbar-brand col-12 loc"
+                        >
+                            101 E Locust st, River Falls, Wi,
+                        </a>
+                        <a
+                            id="headertext"
+                            class="navbar-brand col-12 loc"
+                            href="tel:7154250111"
+                            >Call us 715-425-0111</a
+                        >
+                    </div>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="#"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu-link">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#news-link"
+                                    >Whats new?</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about-link"
+                                    >About us</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq-link">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact-link"
+                                    >Contact us</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <div class="container">
-        <section id="header" class="row header ">
-            <img id="coverPhoto" class="img-fluid no-pad" src="img/cover photo.png" alt="" srcset="">
-        </section>
-    </div>
-    <div id="main page" class="container  ">
-        <div class="row">
-            <section id="menu-container" class="col  col-sm-12 col-md-8  text-center">
-                <a class="anchor" id="menu-link"></a>
-                <div id="menu-top" class="display-1">
-                    Menu
-                </div>
-                <div id="menu" class="row"></div>
+        </nav>
+        <div class="container">
+            <section id="header" class="row header">
+                <!-- <img
+                    id="coverPhoto"
+                    class="img-fluid no-pad"
+                    src="img/cover photo.png"
+                    alt=""
+                    srcset=""
+                /> -->
             </section>
-            <section id="media-bar" class=" home col-sm-12 col-md-4">
-                <a class="anchor" id="news-link"></a>
-                <div class="  col-12">
-                    <div id="facebook" class="fb-page col-12 align-content-center" data-tabs="timeline,events,messages"
-                        data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
-                        data-width="500" data-hide-cover="false">
-                    </div>
+        </div>
+        <div id="main page" class="container">
+            <div class="row">
+                <section
+                    id="menu-container"
+                    class="col col-sm-12 col-md-8 text-center"
+                >
+                    <a class="anchor" id="menu-link"></a>
+                    <div id="menu-top" class="display-1">Menu</div>
+                    <div id="menu" class="row"></div>
+                </section>
+                <section id="media-bar" class="home col-sm-12 col-md-4">
+                    <a class="anchor" id="news-link"></a>
                     <div class="col-12">
-                        <a class="anchor" id="map-link"></a>
-                        <iframe id="map" class="img " height="450" style="border:0" loading="lazy" allowfullscreen
-                            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"></iframe>
+                        <div
+                            id="facebook"
+                            class="fb-page col-12 align-content-center"
+                            data-tabs="timeline,events,messages"
+                            data-href="https://www.facebook.com/Luigis-Pizza-116292548398154/?ref=page_internal"
+                            data-width="500"
+                            data-hide-cover="false"
+                        ></div>
+                        <div class="col-12">
+                            <a class="anchor" id="map-link"></a>
+                            <iframe
+                                id="map"
+                                class="img"
+                                height="450"
+                                style="border: 0"
+                                loading="lazy"
+                                allowfullscreen
+                                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiXemSyjl94cRm06vhVtGhfg&key=AIzaSyAAMKflI7duyvHP38NBW4aUUXIZSVCUZLc"
+                            ></iframe>
+                        </div>
+                        <div
+                            id="carouselExampleControls"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
+                        >
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img
+                                        src="/img/calzone.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/img/meatball.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/img/cupcake.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/img/wings.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/img/pork.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselExampleControls"
+                                data-bs-slide="prev"
+                            >
+                                <span
+                                    class="carousel-control-prev-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselExampleControls"
+                                data-bs-slide="next"
+                            >
+                                <span
+                                    class="carousel-control-next-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/meatball.jpg"
+                            alt=""
+                            srcset=""
+                        />
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/calzone.jpg"
+                            alt=""
+                            srcset=""
+                        />
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/cake.jpg"
+                            alt=""
+                            srcset=""
+                        />
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/wings.jpg"
+                            alt=""
+                            srcset=""
+                        />
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/cupcake.jpg"
+                            alt=""
+                            srcset=""
+                        />
+                        <img
+                            class="img-fluid menuPic"
+                            src="/img/pork.jpg"
+                            alt=""
+                            srcset=""
+                        />
                     </div>
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://images.squarespace-cdn.com/content/v1/52dc4e86e4b00bd4279c779f/1641415436359-65Y8BPU0AV3LTHZ0W8RC/01.png?format=2500w"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://hips.hearstapps.com/vidthumb/images/190130-calzone-horizontal-2-1549482540.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://www.davannis.com/wp-content/uploads/2015/03/Hoagie-TBC-White.jpg"
-                                    class="d-block w-100" alt="...">
+                </section>
+            </div>
+        </div>
+        <div id="extras" class="container">
+            <section id="faq" class="row">
+                <a class="anchor" id="faq-link"></a>
+                <div id="menu-top" class="display-1">F.A.Q.s</div>
+                <div
+                    class="accordion accordion-flush"
+                    id="accordionFlushExample"
+                >
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseOne"
+                            >
+                                Do you have delivery? Do you have a delivery
+                                fee?
+                            </button>
+                        </h2>
+                        <div
+                            id="flush-collapseOne"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne"
+                            data-bs-parent="#accordionFlushExample"
+                        >
+                            <div class="accordion-body">
+                                Yes, We deliver 7 Days a week within Rivers
+                                Falls city limits for just 30¢ and within 5
+                                miles of River Falls for a 2.00 delivery fee!
+                                Just give us a call
+                                <a href="tel:(715) 425-0111">(715) 425-0111</a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
-                    <img class='img-fluid menuPic'
-                        src="https://images.squarespace-cdn.com/content/v1/52dc4e86e4b00bd4279c779f/1641415436359-65Y8BPU0AV3LTHZ0W8RC/01.png?format=2500w"
-                        alt="" srcset="">
-                    <img class='img-fluid menuPic'
-                        src="https://hips.hearstapps.com/vidthumb/images/190130-calzone-horizontal-2-1549482540.png"
-                        alt="" srcset="">
-                    <img class='img-fluid menuPic'
-                        src="https://www.davannis.com/wp-content/uploads/2015/03/Hoagie-TBC-White.jpg" alt="" srcset="">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseTwo"
+                            >
+                                Do you do dine in? Do you take reservations?
+                            </button>
+                        </h2>
+                        <div
+                            id="flush-collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#accordionFlushExample"
+                        >
+                            <div class="accordion-body">
+                                Yes, but only 4PM-8PM Monday, Thursday, and
+                                Saturday. If you would like a reservation just
+                                give us a call during regular business hours
+                                <a href="tel:(715) 425-0111">(715) 425-0111</a>!
+                                Also if you have a large group consider
+                                contacting us <a href="#contact-link">here.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseThree"
+                            >
+                                Can you do contactless delivery? Curbside pick
+                                up?
+                            </button>
+                        </h2>
+                        <div
+                            id="flush-collapseThree"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree"
+                            data-bs-parent="#accordionFlushExample"
+                        >
+                            <div class="accordion-body">
+                                We would be more than happy to accommodate your
+                                situation. just let us know where you would like
+                                the food left and how you would like us to let
+                                you know it there. If you need Curbside pick up
+                                just give us a call upon your arrival,
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseFour"
+                            >
+                                Can you split a pizza in half, quarters?
+                            </button>
+                        </h2>
+                        <div
+                            id="flush-collapseFour"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFour"
+                            data-bs-parent="#accordionFlushExample"
+                        >
+                            <div class="accordion-body">
+                                Absolutely you can, we will try our best to make
+                                your pizza combinations with in reason.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFive"
+                                aria-expanded="false"
+                                aria-controls="flush-collapseFive"
+                            >
+                                Can you do contactless delivery? Curbside
+                                pick-up?
+                            </button>
+                        </h2>
+                        <div
+                            id="flush-collapseFive"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingFive"
+                            data-bs-parent="#accordionFlushExample"
+                        >
+                            <div class="accordion-body">
+                                We would be more than happy to accommodate your
+                                situation. just let us know where you would like
+                                the food left and how you would like us to let
+                                you know it there. If you need Curbside pick-up
+                                just give us a call upon your arrival,
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <section id="about-us" class="row">
+                <a class="anchor" id="about-link"></a>
+                <header class="col-12 display-1">About us</header>
+                <div class="col-12 col-sm-6">
+                    <p class="body-text">
+                        The Kamrowski connection with Luigis started in 1985
+                        when one of my sisters came to college In River Falls
+                        and as she out it " ordered a LOT of Luigis Pizza". Her
+                        Boyfriend actually got me my 1st Luigi's food...a turkey
+                        Hoagie. In 1986 another sister came to UWRF and she
+                        started working at Luigi's and then in 1991 I also
+                        traveled to River Falls to start college and was
+                        delivering Pizzas 2 days after moving in. I bought
+                        Luigis in 1996, my than Girlfriend now Wife moved up
+                        here shortly after and we threw our kids into the mix
+                        and became the Mom-n-Pop place that we are today.
+                    </p>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <img
+                        class="img-fluid rounded"
+                        style="margin-bottom: 10px"
+                        src="young chuck.jpg"
+                        alt=""
+                    />
+                </div>
+            </section>
+            <section id="farm" class="row">
+                <a class="anchor" id="FARM-link"></a>
+                <header class="col-12 display-1">Farm to Fork</header>
+                <div class="col-12 col-sm-6">
+                    <img
+                        class="img-fluid rounded"
+                        style="margin-bottom: 10px"
+                        src="/img/pork.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p class="body-text">
+                        When the Shutdown happened during the Corona Virus
+                        Pandemic I went from working an obscene amount of hours
+                        to an unbelievable amount of hours...quite honestly
+                        during the winter of 2020 Looking at the same 4 walls
+                        was finally getting to me and I needed to either find or
+                        get back to something that could take my brain to
+                        another place and give me some repose from Luigi's
+                        Luigi's Luigi's and so I decided to get back to my
+                        country roots and get me a pig or 2 for Therapy and to
+                        stock the freezer...well life happening like life
+                        happens I ended up with 6 wonderful pigs. There is no
+                        way my family can eat 6 whole pigs so we got them
+                        butchered and used the meat at Luigis in what we call
+                        our Farm-to-Fork Pork....and it BLEW UP!!!it BLEW UP!!!
+                        <br />
+                        The taste profile from Heritage pigs growing on pasture
+                        in the sunshine eating what pigs have been eating in
+                        nature forever is something you notice right away versus
+                        today's conventionally raised pork...the customer's
+                        couldn't get enough and it has turned into a very quick
+                        expansion of our Farm-to-Fork operations including a
+                        breeding and farrowing program, my kid's experiencing
+                        and doing many of the same things that I did as a kid,
+                        and my Wife and kids discovering that a pig is a
+                        beautiful, clean, loyal and intelligent animal that has
+                        brought hours of enjoyment ( and more hard work) into
+                        our lives! The pork is jucier, tastier cooks faster and
+                        with a terrific aroma and the Bacon is PHENOMENAL! We
+                        are VERY Proud of our Pigs!
+                    </p>
+                </div>
+            </section>
+            <section id="contactus" class="row">
+                <a class="anchor" id="contact-link"></a>
+                <header class="col">
+                    <h2>
+                        Do you have a team celebration, party, or large order
+                        planned? Why not have it at Luigi's?!
+                        <strong>Contact us below</strong> to hear about options.
+                    </h2>
+                    <p class="body-text">
+                        Note: This is NOT a food ordering system.
+                    </p>
+                    <div class=" ">
+                        <div>
+                            <form
+                                name="contact"
+                                method="POST"
+                                data-netlify="true"
+                            >
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1"
+                                        >Name</label
+                                    >
+                                    <input
+                                        name="name"
+                                        type="text"
+                                        class="form-control"
+                                        id="contactusname"
+                                        placeholder="Mr Pepper E. Roni"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1"
+                                        >Email address</label
+                                    >
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="name@example.com"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1"
+                                        >About how many people?</label
+                                    >
+                                    <select
+                                        name="People:"
+                                        class="form-control"
+                                        id="exampleFormControlSelect1"
+                                    >
+                                        <option>5-10</option>
+                                        <option>10-25</option>
+                                        <option>25-50</option>
+                                        <option>50-100</option>
+                                        <option>100+!</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1"
+                                        >Any details that might help us serve
+                                        you:</label
+                                    >
+                                    <textarea
+                                        name="extra-info"
+                                        class="form-control"
+                                        id="contactus-extra-details"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                                <p>
+                                    <button
+                                        class="btn btn-primary btn-block"
+                                        type="submit"
+                                    >
+                                        Send
+                                    </button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+            </section>
         </div>
-    </div>
-    <div id="extras" class="container">
-        <section id="faq" class="row">
-            <a class="anchor" id="faq-link"></a>
-            <div id="menu-top" class="display-1">
-                F.A.Q.s
-            </div>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Do you have delivery? Do you have a delivery fee?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body"> Yes, We deliver 7 Days a week within Rivers Falls city limits for
-                            just 30¢ and within 5 miles of River Falls for a 2.00 delivery fee! Just give us a call <a
-                                href="tel:(715) 425-0111">(715) 425-0111</a></div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Do you do dine in? Do you take reservations?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Yes, but only 4PM-8PM Monday, Thursday, and Saturday. If you would
-                            like a reservation just give us a call during regular business hours <a
-                                href="tel:(715) 425-0111">(715) 425-0111</a>! Also if you have a large group consider
-                            contacting us <a href="#contact-link">here.</a></div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            Can you do contactless delivery? Curbside pick up?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">We would be more than happy to accommodate your situation. just
-                            let us know where you would like the food left and how you would like us to let you know
-                            it there. If you need Curbside pick up just give us a call upon your arrival, </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFour" aria-expanded="false"
-                            aria-controls="flush-collapseFour">
-                            Can you split a pizza in half, quarters?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Absolutely you can, we will try our best to make your pizza
-                            combinations with in reason. </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseFive" aria-expanded="false"
-                            aria-controls="flush-collapseFive">
-                            Can you do contactless delivery? Curbside pick-up?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">We would be more than happy to accommodate your situation. just
-                            let us know where you would like the food left and how you would like us to let you know
-                            it there. If you need Curbside pick-up just give us a call upon your arrival, </div>
-                    </div>
-                </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"
+        ></script>
 
-            </div>
-
-        </section>
-        <section id="about-us" class="row ">
-            <a class="anchor" id="about-link"></a>
-            <header class="col-12 display-1 ">About us</header>
-            <div class="col-12 col-sm-6">
-                <p class="body-text">
-                    We are a family-owned restaurant specializing in deep dish pizza, homemade calzones, and hot hoagie.
-                    We offer a family-friendly atmosphere and a great selection of items.
-                    <br>
-                    All of us here at Luigi’s are honored to have so many pizza-loving patrons over the years. Being
-                    open since 1980 has allowed us to serve the same great homemade taste we've always strived for to
-                    generations of the people in River Falls. Thank you for choosing Luigi’s
-                    <br>
-                    We’ve been delivering great food since 1980 and will be for many years to come. So come on down to
-                    103 E. Locust St, River Falls, or give us a call at <a href=”tel:7154250111”>715-425-0111</a>!
-
-                </p>
-            </div>
-            <div class="col-12 col-sm-6">
-                <img class="img-fluid rounded" style="margin-bottom: 10px;" src="young chuck.jpg" alt="">
-
-            </div>
-        </section>
-        <section id="contactus" class="row">
-            <a class="anchor" id="contact-link"></a>
-            <header class="col">
-                <h2>Do you have a team celebration, party, or large order planned? Why not have it at Luigi's?!
-                    <strong>Contact us below</strong> to hear about options.
-                </h2>
-                <p class="body-text">
-                    Note: This is NOT a food ordering system.
-                </p>
-                <div class=" ">
-
-                    <div>
-
-                        <form name="contact" method="POST" data-netlify="true">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Name</label>
-                                <input name='name' type="text" class="form-control" id="contactusname"
-                                    placeholder="Mr Pepper E. Roni">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input name="email" type="email" class="form-control" id="email"
-                                    placeholder="name@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">About how many people?</label>
-                                <select name="People:" class="form-control" id="exampleFormControlSelect1">
-                                    <option>5-10</option>
-                                    <option>10-25</option>
-                                    <option>25-50</option>
-                                    <option>50-100</option>
-                                    <option>100+!</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Any details that might help us serve
-                                    you:</label>
-                                <textarea name="extra-info" class="form-control" id="contactus-extra-details"
-                                    rows="3"></textarea>
-                            </div>
-                            <p>
-                                <button class="btn btn-primary btn-block" type="submit">Send</button>
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </header>
-        </section>
-    </div>
-    <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
-    <script src="CSVToArray.js"></script>
-    <script src="index.js"></script>
-</body>
-
+        <script src="CSVToArray.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>

@@ -73,7 +73,9 @@ body {
     border-radius: .5em;
     margin-bottom: 0;
 }
-
+#glance{
+    border-radius: .5em;
+}
 #facebook {
     width: 100%;
 
@@ -159,6 +161,10 @@ p.bold {
 .no-pad {
     padding-right: 0;
     padding-left: 0;
+}
+.glance {
+    background-color: rgb(255, 246, 218);
+    border-radius: .5em;
 }
 
 .naavbar-brand {
